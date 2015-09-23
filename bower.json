@@ -1,6 +1,5 @@
 {
   "name": "purescript-node-url",
-  "version": "1.0.0",
   "moduleType": [
     "node"
   ],
