@@ -1,7 +1,5 @@
 "use strict";
 
-// module Node.URL
-
 var url = require('url');
 var queryString = require('querystring');
 
@@ -12,7 +10,7 @@ exports.format = url.format;
 exports.resolve = function(from) {
     return function(to) {
         return url.resolve(from, to);
-    }  
+    }
 };
 
 exports.parseQueryString = queryString.parse;
