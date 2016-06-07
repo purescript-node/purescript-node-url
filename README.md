@@ -1,9 +1,16 @@
 # purescript-node-url
 
-A wrapper for Node's URL and QueryString APIs
+[![Latest release](http://img.shields.io/bower/v/purescript-node-url.svg)](https://github.com/purescript-node/purescript-node-url/releases)
+[![Build Status](https://travis-ci.org/purescript-node/purescript-node-url.svg?branch=master)](https://travis-ci.org/purescript-node/purescript-node-url)
 
-- [Module Documentation](docs/)
+A wrapper for Node's `URL` and `QueryString` APIs
 
-## Usage
+## Installation
 
-    bower i purescript-node-url
+```
+bower install purescript-node-url
+```
+
+## Documentation
+
+Module documentation is [published on Pursuit](http://pursuit.purescript.org/packages/purescript-node-url).
