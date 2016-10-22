@@ -12,9 +12,9 @@
     "url": "git://github.com/purescript-node/purescript-node-url.git"
   },
   "devDependencies": {
-    "purescript-console": "^1.0.0"
+    "purescript-console": "^2.0.0"
   },
   "dependencies": {
-    "purescript-nullable": "^1.0.0"
+    "purescript-nullable": "^2.0.0"
   }
 }
