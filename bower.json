@@ -12,6 +12,6 @@
     "url": "git://github.com/purescript-node/purescript-node-url.git"
   },
   "dependencies": {
-    "purescript-nullable": "^4.0.0"
+    "purescript-nullable": "master"
   }
 }
