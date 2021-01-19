@@ -12,13 +12,22 @@ Bugfixes:
 
 Other improvements:
 
+## [v5.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v5.0.0) - 2021-MONTH-DAY
+
+Breaking changes:
+  - Added support for PureScript 0.14 and dropped support for all previous versions (#10)
+
+Other improvements:
+  - Migrated CI to GitHub Actions, updated installation instructions to use Spago, and switched from `jshint` to `eslint` (#9)
+  - Added a changelog and pull request template (#11)
+
 ## [v4.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v4.0.0) - 2018-05-27
 
-Updated for PureScript 0.12
+- Updated for PureScript 0.12
 
 ## [v3.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v3.0.0) - 2017-04-04
 
-Updates for 0.11 (@anilanar)
+- Updated for 0.11 (@anilanar)
 
 ## [v2.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v2.0.0) - 2016-10-22
 
@@ -26,17 +35,16 @@ Updates for 0.11 (@anilanar)
 
 ## [v1.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v1.0.0) - 2016-06-07
 
-Updates for 1.0 core libraries.
+- Updates for 1.0 core libraries.
 
 ## [v0.1.2](https://github.com/purescript-node/purescript-node-url/releases/tag/v0.1.2) - 2016-05-02
 
-Fix license in bower.json for Pursuit
+- Fix license in bower.json for Pursuit
 
 ## [v0.1.1](https://github.com/purescript-node/purescript-node-url/releases/tag/v0.1.1) - 2015-09-23
 
-Pursuit
+- Release to Pursuit
 
 ## [v0.1.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v0.1.0) - 2015-09-23
 
-Initial release
-
+- Initial release
