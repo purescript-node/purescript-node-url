@@ -15,7 +15,7 @@ Other improvements:
 ## [v5.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v5.0.0) - 2021-MONTH-DAY
 
 Breaking changes:
-  - Updated dependencies for PureScript 0.14 (#10)
+  - Added support for PureScript 0.14 and dropped support for all previous versions (#10)
 
 Other improvements:
   - Migrated CI to GitHub Actions, updated installation instructions to use Spago, and switched from `jshint` to `eslint` (#9)
