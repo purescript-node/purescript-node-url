@@ -1,18 +1,12 @@
 "use strict";
 
-var url = require("url");
-var queryString = require("querystring");
+import url from "url";
+import queryString from "querystring";
+export { parse, format } from 'url';
 
-exports.parse = url.parse;
+export function resolve(from) {
+  return to => url.resolve(from, to);
+}
 
-exports.format = url.format;
-
-exports.resolve = function (from) {
-  return function (to) {
-    return url.resolve(from, to);
-  };
-};
-
-exports.parseQueryString = queryString.parse;
-
-exports.toQueryString = queryString.stringify;
+export const parseQueryString = queryString.parse;
+export const toQueryString = queryString.stringify;
