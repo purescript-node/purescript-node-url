@@ -12,9 +12,9 @@
     "url": "https://github.com/purescript-node/purescript-node-url.git"
   },
   "dependencies": {
-    "purescript-nullable": "main"
+    "purescript-nullable": "^6.0.0"
   },
   "devDependencies": {
-    "purescript-assert": "master"
+    "purescript-assert": "^6.0.0"
   }
 }
