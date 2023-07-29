@@ -11,6 +11,9 @@ New features:
 Bugfixes:
 
 Other improvements:
+- Update CI `node` to `lts/*` (#19 by @JordanMartinez)
+- Update CI actions to `v3` (#19 by @JordanMartinez)
+- Enforce formatting check via `purs-tidy` (#19 by @JordanMartinez)
 
 ## [v6.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v6.0.0) - 2022-04-27
 
