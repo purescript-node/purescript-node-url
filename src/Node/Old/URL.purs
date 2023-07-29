@@ -1,6 +1,6 @@
 -- | This module defines bindings to the Node URL and Query String APIs.
 
-module Node.URL where
+module Node.Old.URL where
 
 import Data.Nullable
 
