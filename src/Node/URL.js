@@ -2,6 +2,7 @@ import url from "node:url";
 
 export const newImpl = (input) => new url.URL(input);
 export const newRelativeImpl = (input, base) => new url.URL(input, base);
+export const pathToFileURLImpl = (path) => url.pathToFileURL(path);
 export const hashImpl = (u) => u.hash;
 export const setHashImpl = (h, u) => {
   u.hash = h;
@@ -47,3 +48,10 @@ export const setUsernameImpl = (val, u) => {
 };
 
 export const canParseImpl = (input, base) => URL.canParse(input, base);
+export const domainToAsciiImpl = (domain) => url.domainToASCII(domain);
+export const domainToUnicodeImpl = (domain) => url.domainToUnicode(domain);
+export const fileURLToPathImpl = (str) => url.fileURLToPath(str);
+export const fileURLToPathUrlImpl = (str) => url.fileURLToPath(str);
+export const formatImpl = (theUrl, opts) => url.format(theUrl, opts);
+export const pathToFileUrlImpl = (path) => url.pathToFileURL(path);
+export const urlToHttpOptionsImpl = (theUrl) => url.urlToHttpOptions(theUrl);

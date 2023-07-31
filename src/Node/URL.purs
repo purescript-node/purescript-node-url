@@ -5,6 +5,8 @@ import Prelude
 import Data.Function.Uncurried (Fn2, runFn2)
 import Effect (Effect)
 import Effect.Uncurried (EffectFn1, EffectFn2, runEffectFn1, runEffectFn2)
+import Node.URL.URLSearchParams (URLSearchParams)
+import Prim.Row as Row
 
 foreign import data URL :: Type
 
@@ -20,6 +22,11 @@ new' :: String -> String -> Effect URL
 new' input base = runEffectFn2 newRelativeImpl input base
 
 foreign import newRelativeImpl :: EffectFn2 (String) (String) (URL)
+
+pathToFileURL :: String -> Effect URL
+pathToFileURL path = runEffectFn1 pathToFileURLImpl path
+
+foreign import pathToFileURLImpl :: EffectFn1 (String) (URL)
 
 hash :: URL -> Effect String
 hash url = runEffectFn1 hashImpl url
@@ -135,6 +142,74 @@ canParse input base = runFn2 canParseImpl input base
 
 foreign import canParseImpl :: Fn2 (String) (String) (Boolean)
 
--- searchParams
+domainToAscii :: String -> Effect String
+domainToAscii domain = runEffectFn1 domainToAsciiImpl domain
 
-foreign import data URLSearchParams :: Type
+foreign import domainToAsciiImpl :: EffectFn1 (String) (String)
+
+domainToUnicode :: String -> Effect String
+domainToUnicode domain = runEffectFn1 domainToUnicodeImpl domain
+
+foreign import domainToUnicodeImpl :: EffectFn1 (String) (String)
+
+fileURLToPath :: String -> Effect String
+fileURLToPath str = runEffectFn1 fileURLToPathImpl str
+
+foreign import fileURLToPathImpl :: EffectFn1 String String
+
+fileURLToPath' :: URL -> Effect String
+fileURLToPath' url = runEffectFn1 fileURLToPathUrlImpl url
+
+foreign import fileURLToPathUrlImpl :: EffectFn1 URL String
+
+-- | - `auth` <boolean> true if the serialized URL string should include the username and password, false otherwise. Default: true.
+-- | - `fragment` <boolean> true if the serialized URL string should include the fragment, false otherwise. Default: true.
+-- | - `search` <boolean> true if the serialized URL string should include the search query, false otherwise. Default: true.
+-- | - `unicode` <boolean> true if Unicode characters appearing in the host component of the URL string should be encoded directly as opposed to being Punycode encoded. Default: false.
+type UrlFormatOptions =
+  ( auth :: Boolean
+  , fragment :: Boolean
+  , search :: Boolean
+  , unicode :: Boolean
+  )
+
+format
+  :: forall r trash
+   . Row.Union r trash UrlFormatOptions
+  => URL
+  -> { | r }
+  -> Effect String
+format url opts = runEffectFn2 formatImpl url opts
+
+foreign import formatImpl :: forall r. EffectFn2 (URL) ({ | r }) (String)
+
+pathToFileUrl :: String -> Effect URL
+pathToFileUrl path = runEffectFn1 pathToFileUrlImpl path
+
+foreign import pathToFileUrlImpl :: EffectFn1 (String) (URL)
+
+-- | - `protocol` <string> Protocol to use.
+-- | - `hostname` <string> A domain name or IP address of the server to issue the request to.
+-- | - `hash` <string> The fragment portion of the URL.
+-- | - `search` <string> The serialized query portion of the URL.
+-- | - `pathname` <string> The path portion of the URL.
+-- | - `path` <string> Request path. Should include query string if any. E.G. '/index.html?page=12'. An exception is thrown when the request path contains illegal characters. Currently, only spaces are rejected but that may change in the future.
+-- | - `href` <string> The serialized URL.
+-- | - `port` <number> Port of remote server.
+-- | - `auth` <string> Basic authentication i.e. 'user:password' to compute an Authorization header.
+type HttpOptions =
+  { protocol :: String
+  , hostname :: String
+  , hash :: String
+  , search :: String
+  , pathname :: String
+  , path :: String
+  , href :: String
+  , port :: Int
+  , auth :: String
+  }
+
+urlToHTTPOptions :: URL -> Effect HttpOptions
+urlToHTTPOptions url = runEffectFn1 urlToHttpOptionsImpl url
+
+foreign import urlToHttpOptionsImpl :: EffectFn1 (URL) (HttpOptions)
