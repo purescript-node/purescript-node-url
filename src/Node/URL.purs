@@ -162,6 +162,11 @@ fileURLToPath' url = runEffectFn1 fileURLToPathUrlImpl url
 
 foreign import fileURLToPathUrlImpl :: EffectFn1 URL String
 
+format :: URL -> Effect String
+format url = runEffectFn1 formatImpl url
+
+foreign import formatImpl :: EffectFn1 (URL) (String)
+
 -- | - `auth` <boolean> true if the serialized URL string should include the username and password, false otherwise. Default: true.
 -- | - `fragment` <boolean> true if the serialized URL string should include the fragment, false otherwise. Default: true.
 -- | - `search` <boolean> true if the serialized URL string should include the search query, false otherwise. Default: true.
@@ -173,15 +178,15 @@ type UrlFormatOptions =
   , unicode :: Boolean
   )
 
-format
+format'
   :: forall r trash
    . Row.Union r trash UrlFormatOptions
   => URL
   -> { | r }
   -> Effect String
-format url opts = runEffectFn2 formatImpl url opts
+format' url opts = runEffectFn2 formatOptsImpl url opts
 
-foreign import formatImpl :: forall r. EffectFn2 (URL) ({ | r }) (String)
+foreign import formatOptsImpl :: forall r. EffectFn2 (URL) ({ | r }) (String)
 
 pathToFileUrl :: String -> Effect URL
 pathToFileUrl path = runEffectFn1 pathToFileUrlImpl path

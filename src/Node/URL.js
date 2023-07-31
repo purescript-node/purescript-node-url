@@ -52,6 +52,7 @@ export const domainToAsciiImpl = (domain) => url.domainToASCII(domain);
 export const domainToUnicodeImpl = (domain) => url.domainToUnicode(domain);
 export const fileURLToPathImpl = (str) => url.fileURLToPath(str);
 export const fileURLToPathUrlImpl = (str) => url.fileURLToPath(str);
-export const formatImpl = (theUrl, opts) => url.format(theUrl, opts);
+export const formatImpl = (theUrl) => url.format(theUrl);
+export const formatOptsImpl = (theUrl, opts) => url.format(theUrl, opts);
 export const pathToFileUrlImpl = (path) => url.pathToFileURL(path);
 export const urlToHttpOptionsImpl = (theUrl) => url.urlToHttpOptions(theUrl);
