@@ -6,6 +6,7 @@ Notable changes to this project are documented in this file. The format is based
 
 Breaking changes:
 - Drop support for Legacy API (#20 by @JordanMartinez)
+- Drop support for `querystring` bindings (#20 by @JordanMartinez)
 - Implement WHATWG URL API bindings (#20 by @JordanMartinez)
 
 New features:
