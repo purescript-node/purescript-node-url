@@ -5,6 +5,8 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes:
+- Drop support for Legacy API (#20 by @JordanMartinez)
+- Implement WHATWG URL API bindings (#20 by @JordanMartinez)
 
 New features:
 
