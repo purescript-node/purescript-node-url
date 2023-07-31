@@ -1,4 +1,21 @@
-module Node.URL.URLSearchParams where
+module Node.URL.URLSearchParams
+  ( URLSearchParams
+  , new
+  , fromString
+  , fromObject
+  , appendParam
+  , delete
+  , getName
+  , getAll
+  , has
+  , set
+  , size
+  , sort
+  , toString
+  , entries
+  , keys
+  , values
+  ) where
 
 import Prelude
 

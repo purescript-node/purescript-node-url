@@ -1,4 +1,42 @@
-module Node.URL where
+module Node.URL
+  ( URL
+  , new
+  , new'
+  , pathToFileURL
+  , hash
+  , setHash
+  , host
+  , setHost
+  , hostname
+  , setHostname
+  , href
+  , setHref
+  , origin
+  , password
+  , setPassword
+  , pathname
+  , setPathname
+  , port
+  , setPort
+  , protocol
+  , setProtocol
+  , search
+  , setSearch
+  , searchParams
+  , username
+  , setUsername
+  , canParse
+  , domainToAscii
+  , domainToUnicode
+  , fileURLToPath
+  , fileURLToPath'
+  , UrlFormatOptions
+  , format
+  , format'
+  , pathToFileUrl
+  , HttpOptions
+  , urlToHTTPOptions
+  ) where
 
 import Prelude
 
