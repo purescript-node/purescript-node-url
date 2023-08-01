@@ -47,7 +47,7 @@ export const setUsernameImpl = (val, u) => {
   u.username = val;
 };
 
-export const canParseImpl = (input, base) => URL.canParse(input, base);
+export const canParseImpl = (input, base) => url.URL.canParse(input, base);
 export const domainToAsciiImpl = (domain) => url.domainToASCII(domain);
 export const domainToUnicodeImpl = (domain) => url.domainToUnicode(domain);
 export const fileURLToPathImpl = (str) => url.fileURLToPath(str);

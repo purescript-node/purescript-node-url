@@ -1,7 +1,9 @@
-const newImpl = () => new URLSearchParams();
+import url from "node:url";
+
+const newImpl = () => new url.URLSearchParams();
 export { newImpl as new };
-export const fromStringImpl = (str) => new URLSearchParams(str);
-export const fromObjectImpl = (obj) => new URLSearchParams(obj);
+export const fromStringImpl = (str) => new url.URLSearchParams(str);
+export const fromObjectImpl = (obj) => new url.URLSearchParams(obj);
 export const appendParamImpl = (name, value, params) => params.append(name, value);
 export const deleteImpl = (name, params) => params.delete(name);
 export const getNameImpl = (name, params) => params.getName(name);
