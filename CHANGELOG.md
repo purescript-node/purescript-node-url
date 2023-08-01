@@ -10,6 +10,7 @@ Breaking changes:
 - Implement WHATWG URL API bindings (#20 by @JordanMartinez)
 
 New features:
+- Implement bindings for `URLSearchParams` (#20 by @JordanMartinez)
 
 Bugfixes:
 
