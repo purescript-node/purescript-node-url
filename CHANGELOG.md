@@ -11,6 +11,20 @@ New features:
 Bugfixes:
 
 Other improvements:
+
+## [v7.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v7.0.0) - 2023-07-31
+
+Breaking changes:
+- Drop support for Legacy API (#20 by @JordanMartinez)
+- Drop support for `querystring` bindings (#20 by @JordanMartinez)
+- Implement WHATWG URL API bindings (#20 by @JordanMartinez)
+
+New features:
+- Implement bindings for `URLSearchParams` (#20 by @JordanMartinez)
+
+Bugfixes:
+
+Other improvements:
 - Update CI `node` to `lts/*` (#19 by @JordanMartinez)
 - Update CI actions to `v3` (#19 by @JordanMartinez)
 - Enforce formatting check via `purs-tidy` (#19 by @JordanMartinez)
