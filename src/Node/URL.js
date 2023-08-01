@@ -15,7 +15,7 @@ export const hostnameImpl = (u) => u.hostname;
 export const setHostnameImpl = (val, u) => {
   u.hostname = val;
 };
-export const uneffectfulHref = (u) => u.href;
+export const hrefPure = (u) => u.href;
 export const hrefImpl = (u) => u.href;
 export const setHrefImpl = (val, u) => {
   u.href = val;

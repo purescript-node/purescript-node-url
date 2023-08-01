@@ -11,6 +11,7 @@ New features:
 Bugfixes:
 
 Other improvements:
+- Rename `uneffectfulHref` to `hrefPure` (used in `Show` instance) (#21 by @JordanMartinez)
 
 ## [v7.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v7.0.0) - 2023-07-31
 

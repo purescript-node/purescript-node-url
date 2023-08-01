@@ -49,7 +49,7 @@ import Prim.Row as Row
 foreign import data URL :: Type
 
 instance Show URL where
-  show x = "URL(" <> uneffectfulHref x <> ")"
+  show x = "URL(" <> hrefPure x <> ")"
 
 new :: String -> Effect URL
 new input = runEffectFn1 newImpl input
@@ -96,7 +96,8 @@ setHostname val url = runEffectFn2 setHostnameImpl val url
 
 foreign import setHostnameImpl :: EffectFn2 String URL Unit
 
-foreign import uneffectfulHref :: URL -> String
+-- do not export
+foreign import hrefPure :: URL -> String
 
 href :: URL -> Effect String
 href url = runEffectFn1 hrefImpl url
