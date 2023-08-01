@@ -5,6 +5,16 @@ Notable changes to this project are documented in this file. The format is based
 ## [Unreleased]
 
 Breaking changes:
+
+New features:
+
+Bugfixes:
+
+Other improvements:
+
+## [v7.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v7.0.0) - 2023-07-31
+
+Breaking changes:
 - Drop support for Legacy API (#20 by @JordanMartinez)
 - Drop support for `querystring` bindings (#20 by @JordanMartinez)
 - Implement WHATWG URL API bindings (#20 by @JordanMartinez)
