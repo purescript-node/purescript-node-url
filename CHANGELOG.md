@@ -9,6 +9,7 @@ Breaking changes:
 New features:
 
 Bugfixes:
+ - `URLSearchParams.keys` and `.values` returned undefined due to a bug in the foreign code (#22 by @cakekindel)
 
 Other improvements:
 - Rename `uneffectfulHref` to `hrefPure` (used in `Show` instance) (#21 by @JordanMartinez)
