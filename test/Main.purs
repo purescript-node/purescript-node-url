@@ -17,21 +17,29 @@ import Test.Assert (assertEqual)
 
 main ∷ Effect Unit
 main = do
+  -- Simple roundtrip
   do
-    -- Simple roundtrip
     let urlStr = "http://example.com/"
     url <- URL.new urlStr
     urlStr' <- URL.format url
     assertEqual { expected: urlStr, actual: urlStr' }
 
+  -- URLSearchParams
   do
-    -- URLSearchParams
     let urlStr = "http://example.com/?k&v=a&k&v=b"
     url <- URL.new urlStr
     search <- URL.searchParams url
     keys <- URL.Search.keys search
     valuesForeign <- URL.Search.values search
-    values <- for valuesForeign $ liftEither <<< lmap (error <<< show) <<< runExcept <<< unsafeReadTagged "String"
+
+    let
+      getStringOrThrow =
+        liftEither
+        <<< lmap (error <<< show)
+        <<< runExcept
+        <<< unsafeReadTagged "String"
+
+    values <- for valuesForeign getStringOrThrow
 
     map <- Map.fromFoldable <$> for keys \k -> do
              vs <- URL.Search.getAll k search
