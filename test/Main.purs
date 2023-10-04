@@ -35,21 +35,22 @@ main = do
     let
       getStringOrThrow =
         liftEither
-        <<< lmap (error <<< show)
-        <<< runExcept
-        <<< unsafeReadTagged "String"
+          <<< lmap (error <<< show)
+          <<< runExcept
+          <<< unsafeReadTagged "String"
 
     values <- for valuesForeign getStringOrThrow
 
     map <- Map.fromFoldable <$> for keys \k -> do
-             vs <- URL.Search.getAll k search
-             pure $ Tuple k vs
+      vs <- URL.Search.getAll k search
+      pure $ Tuple k vs
 
-    assertEqual { actual: keys, expected: ["k", "v", "k", "v"] }
-    assertEqual { actual: values, expected: ["", "a", "", "b"] }
+    assertEqual { actual: keys, expected: [ "k", "v", "k", "v" ] }
+    assertEqual { actual: values, expected: [ "", "a", "", "b" ] }
     assertEqual
       { actual: map
-      , expected: Map.fromFoldable [ Tuple "k" ["", ""]
-                                   , Tuple "v" ["a", "b"]
-                                   ]
+      , expected: Map.fromFoldable
+          [ Tuple "k" [ "", "" ]
+          , Tuple "v" [ "a", "b" ]
+          ]
       }
