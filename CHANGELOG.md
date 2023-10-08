@@ -9,10 +9,16 @@ Breaking changes:
 New features:
 
 Bugfixes:
+
+Other improvements:
+
+## [v7.0.1](https://github.com/purescript-node/purescript-node-url/releases/tag/v7.0.1) - 2023-10-08
+
+Bugfixes:
  - `URLSearchParams.keys` and `.values` returned undefined due to a bug in the foreign code (#22 by @cakekindel)
 
 Other improvements:
-- Rename `uneffectfulHref` to `hrefPure` (used in `Show` instance) (#21 by @JordanMartinez)
+- Rename `uneffectfulHref` to `hrefPure` (used privately for `Show` instance) (#21 by @JordanMartinez)
 
 ## [v7.0.0](https://github.com/purescript-node/purescript-node-url/releases/tag/v7.0.0) - 2023-07-31
 
