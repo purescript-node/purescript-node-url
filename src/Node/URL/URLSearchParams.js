@@ -21,8 +21,8 @@ export const entriesImpl = (params, tuple) => {
   return arr;
 };
 export const keysImpl = (params) => {
-  Array.from(params.keys());
+  return Array.from(params.keys());
 };
 export const valuesImpl = (params) => {
-  Array.from(params.values());
+  return Array.from(params.values());
 };

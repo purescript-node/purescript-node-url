@@ -3,12 +3,14 @@
   "scripts": {
     "clean": "rimraf output && rimraf .pulp-cache",
     "build": "eslint src && pulp build -- --censor-lib --strict",
-    "test": "pulp test -- --censor-lib --strict"
+    "test": "pulp test -- --censor-lib --strict",
+    "fmt": "purs-tidy format-in-place 'src/**/*.purs' 'test/**/*.purs'"
   },
   "devDependencies": {
     "eslint": "^7.15.0",
     "pulp": "16.0.0-0",
     "purescript-psa": "^0.8.2",
+    "purs-tidy": "^0.10.0",
     "rimraf": "^3.0.2"
   }
 }
