@@ -5,7 +5,7 @@ module Node.URL.URLSearchParams
   , fromObject
   , appendParam
   , delete
-  , getName
+  , get
   , getAll
   , has
   , set
@@ -57,10 +57,10 @@ delete name params = runEffectFn2 deleteImpl name params
 
 foreign import deleteImpl :: EffectFn2 (String) (URLSearchParams) (Unit)
 
-getName :: String -> URLSearchParams -> Effect (Maybe String)
-getName name params = map toMaybe $ runEffectFn2 getNameImpl name params
+get :: String -> URLSearchParams -> Effect (Maybe String)
+get name params = map toMaybe $ runEffectFn2 getImpl name params
 
-foreign import getNameImpl :: EffectFn2 (String) (URLSearchParams) (Nullable String)
+foreign import getImpl :: EffectFn2 (String) (URLSearchParams) (Nullable String)
 
 getAll :: String -> URLSearchParams -> Effect (Array String)
 getAll name params = runEffectFn2 getAllImpl name params
