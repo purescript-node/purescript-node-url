@@ -9,6 +9,7 @@ Breaking changes:
 New features:
 
 Bugfixes:
+- `URLSearchParams.getName` does not exist, renamed to the correct name `get`
 
 Other improvements:
 

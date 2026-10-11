@@ -2,17 +2,18 @@ module Test.Main where
 
 import Prelude
 
-import Effect (Effect)
-import Node.URL as URL
-import Node.URL.URLSearchParams as URL.Search
-import Foreign (unsafeReadTagged)
-import Data.Bifunctor (lmap)
-import Control.Monad.Except (runExcept)
 import Control.Monad.Error.Class (liftEither)
-import Effect.Exception (error)
+import Control.Monad.Except (runExcept)
+import Data.Bifunctor (lmap)
+import Data.Map as Map
+import Data.Maybe (Maybe(..))
 import Data.Traversable (for)
 import Data.Tuple (Tuple(..))
-import Data.Map as Map
+import Effect (Effect)
+import Effect.Exception (error)
+import Foreign (unsafeReadTagged)
+import Node.URL as URL
+import Node.URL.URLSearchParams as URL.Search
 import Test.Assert (assertEqual)
 
 main ∷ Effect Unit
@@ -54,3 +55,11 @@ main = do
           , Tuple "v" [ "a", "b" ]
           ]
       }
+
+    v <- URL.Search.get "v" search
+
+    assertEqual
+      { actual: v
+      , expected: Just "a"
+      }
+
